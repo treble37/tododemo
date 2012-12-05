@@ -32,9 +32,9 @@ group :test, :development do
   gem 'autotest'
   gem 'autotest-rails-pure'
   gem 'factory_girl_rails', '~>1.6.0' #higher version than in Rails tutorial
-  gem 'guard-rspec'
-  gem 'guard-spork', '~>0.5.2' #higher version than in Rails tutorial
-  gem 'spork', '~>0.9.0'
+  gem 'guard-rspec', '~>2.3.0'
+  gem 'guard-spork', '~>1.2.0' #higher version than in Rails tutorial
+  gem 'spork', '~>0.9.2'
   
   #Added 2/14/12 Tues for debugging
   gem "linecache19", "0.5.13"
