@@ -7,7 +7,6 @@ gem 'rails', '~>3.2.9'
 
 gem 'sqlite3'
 
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -28,20 +27,22 @@ gem 'therubyracer' #needed for rspec install
 group :test, :development do
   gem 'annotate', '~> 2.4.1.beta' 
   gem 'faker','~>1.0.1'
-  #Added 2/14/12 Tues for debugging
-  gem "linecache19", "0.5.13"
-  gem "ruby-debug-base19", "0.11.26"
-  gem "ruby-debug19", require: 'ruby-debug'
-end
-group :test do
+  
   gem 'rspec-rails', '>= 2.6.1'
-  gem 'capybara', '~>1.1.2' #used in Rails 3.2.1 tutorial
   gem 'autotest'
   gem 'autotest-rails-pure'
   gem 'factory_girl_rails', '~>1.6.0' #higher version than in Rails tutorial
   gem 'guard-rspec'
   gem 'guard-spork', '~>0.5.2' #higher version than in Rails tutorial
   gem 'spork', '~>0.9.0'
+  
+  #Added 2/14/12 Tues for debugging
+  gem "linecache19", "0.5.13"
+  gem "ruby-debug-base19", "0.11.26"
+  gem "ruby-debug19", require: 'ruby-debug'
+end
+group :test do
+  gem 'capybara', '~>1.1.2' #used in Rails 3.2.1 tutorial
   
   #Linux system dependent gems for use with guard, Rails 3.2 tutorial
   gem 'rb-inotify', '0.8.8'
