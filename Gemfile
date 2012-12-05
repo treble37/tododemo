@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem 'rails', '~>3.2.9'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -26,16 +26,12 @@ gem 'libv8', '~> 3.11.8'
 gem 'therubyracer' #needed for rspec install
 
 group :test, :development do
-  gem 'rspec-rails', '>= 2.6.1'
   gem 'annotate', '~> 2.4.1.beta' 
   gem 'faker','~>1.0.1'
-  gem 'guard-rspec'
-  gem 'guard-spork', '~>0.5.2' #higher version than in Rails tutorial
-  gem 'spork', '~>0.9.0'
   #Added 2/14/12 Tues for debugging
-  # gem "linecache19", "0.5.13"
-  # gem "ruby-debug-base19", "0.11.26"
-  # gem "ruby-debug19", require: 'ruby-debug'
+  gem "linecache19", "0.5.13"
+  gem "ruby-debug-base19", "0.11.26"
+  gem "ruby-debug19", require: 'ruby-debug'
 end
 group :test do
   gem 'rspec-rails', '>= 2.6.1'
@@ -43,6 +39,9 @@ group :test do
   gem 'autotest'
   gem 'autotest-rails-pure'
   gem 'factory_girl_rails', '~>1.6.0' #higher version than in Rails tutorial
+  gem 'guard-rspec'
+  gem 'guard-spork', '~>0.5.2' #higher version than in Rails tutorial
+  gem 'spork', '~>0.9.0'
   
   #Linux system dependent gems for use with guard, Rails 3.2 tutorial
   gem 'rb-inotify', '0.8.8'
