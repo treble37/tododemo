@@ -34,4 +34,7 @@ Tododemo::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  
+  #Added per Devise, 12/10/12
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 end

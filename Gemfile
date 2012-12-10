@@ -23,6 +23,7 @@ gem 'jquery-rails'
 gem 'execjs'
 gem 'libv8', '~> 3.11.8'
 gem 'therubyracer' #needed for rspec install
+gem 'devise', '~> 2.1.2'
 
 group :test, :development do
   gem 'annotate', '~> 2.4.1.beta' 
