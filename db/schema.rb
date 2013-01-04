@@ -11,7 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121210200441) do
+ActiveRecord::Schema.define(:version => 20130103003557) do
+
+  create_table "folders", :force => true do |t|
+    t.string   "name"
+    t.integer  "todouser_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "tasks", :force => true do |t|
+    t.text     "description"
+    t.string   "duedate"
+    t.integer  "taskable_id"
+    t.string   "taskable_type"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "tasks", ["taskable_id", "taskable_type"], :name => "index_tasks_on_taskable_id_and_taskable_type"
 
   create_table "todousers", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

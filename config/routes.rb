@@ -1,11 +1,25 @@
 Tododemo::Application.routes.draw do
+  #get "tasks/index"
+
+  #get "tasks/new"
+
   devise_for :todousers
 
   get "pages/home"
 
   get "pages/about"
   
+  resources :todousers do
+    resources :tasks  
+  end
+  
+  resources :folders do
+    resources :tasks
+  end
+  
   root :to=>"pages#home"
+  
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
