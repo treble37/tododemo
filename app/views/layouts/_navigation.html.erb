@@ -4,6 +4,9 @@
     <li>
     <%= link_to('Logout', destroy_todouser_session_path, :method=>'delete') %>        
     </li>
+    <li>
+    <%= link_to("Show Tasks", [current_todouser, :tasks]) %>        
+    </li>
   <% else %>
     <li>
     <%= link_to('Login', new_todouser_session_path)  %>  
