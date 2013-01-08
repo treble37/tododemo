@@ -1,2 +1,24 @@
 <h1>New Task</h1>
-<p>Find me in app/views/tasks/new.html.erb</p>
+<%= form_for [@taskable, @task] do |f| %>
+  <% if @task.errors.any? %>
+    <div class="#{flash_class(:error)}">
+      <h2>Please correct the following errors.</h2>
+      <ul>
+      <% @task.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+  	<%= f.label "Task Description" %>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+  	<%= f.label "Due Date" %>
+    <%= f.text_field :duedate %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

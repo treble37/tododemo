@@ -1,4 +1,9 @@
 <h1>Tasks#index</h1>
+<div>
+  <% @tasks.each do |task| %>
+    <div>
+      <%= simple_format task.description+" "+task.duedate %>
+    </div>
+  <% end %>
+</div>
 <p><%= link_to "New Task", [:new, @taskable, :task] %></p>
-
-<%= @taskable.tasks %>
