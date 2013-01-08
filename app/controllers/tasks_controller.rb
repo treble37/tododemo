@@ -6,6 +6,16 @@ class TasksController < ApplicationController
   end
 
   def new
+  	@task = @taskable.tasks.new
+  end
+
+  def create
+  	@task = @taskable.tasks.new(params[:task])
+  	if @task.save
+  		redirect_to [@taskable, :tasks], notice: "Task created."
+  	else
+  		render :new
+  	end
   end
 
 private
