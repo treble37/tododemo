@@ -3,6 +3,8 @@
   <% @tasks.each do |task| %>
     <div>
       <%= simple_format task.description+" "+task.duedate %>
+      <%= link_to "Edit Task", [:edit, current_todouser, task] %>
+      <%= link_to "Delete Task", [current_todouser, task], :confirm=>"Are you sure?", :method=>:delete %>
     </div>
   <% end %>
 </div>
