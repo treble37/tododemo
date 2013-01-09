@@ -48,7 +48,7 @@ group :test do
   #Linux system dependent gems for use with guard, Rails 3.2 tutorial
   gem 'rb-inotify', '0.8.8'
   gem 'libnotify', '0.5.9'
-  gem 'cucumber-rails', '1.2.1'
+  gem 'cucumber-rails', '1.2.1', :require=>false
   gem 'database_cleaner', '0.7.0'
 end
 
