@@ -37,10 +37,7 @@ group :test, :development do
   gem 'guard-spork', '~>1.2.0' #higher version than in Rails tutorial
   gem 'spork', '~>0.9.2'
   
-  #Added 2/14/12 Tues for debugging
-  gem "linecache19", "0.5.13"
-  gem "ruby-debug-base19", "0.11.26"
-  gem "ruby-debug19", require: 'ruby-debug'
+  gem "debugger", "~> 1.6.0"
 end
 group :test do
   gem 'capybara', '~>1.1.2' #used in Rails 3.2.1 tutorial
