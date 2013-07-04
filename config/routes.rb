@@ -11,11 +11,12 @@ Tododemo::Application.routes.draw do
   
   resources :todousers do
     resources :tasks  
+    resources :folders do
+      resources :tasks
+    end
   end
   
-  resources :folders do
-    resources :tasks
-  end
+  
   
   root :to=>"pages#home"
   
