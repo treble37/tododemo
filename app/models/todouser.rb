@@ -8,6 +8,6 @@ class Todouser < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
-  has_many :tasks, as: :taskable
+  has_many :tasks, as: :taskable, dependent: :destroy
   has_many :folders, dependent: :destroy
 end
