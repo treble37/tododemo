@@ -5,10 +5,10 @@
     <%= link_to('Logout', destroy_todouser_session_path, :method=>'delete') %>        
     </li>
     <li>
-    <%= link_to("Show Tasks", [current_todouser, :folders]) %>        
+    <%= link_to("Show User-Created Tasks", [current_todouser, :tasks]) %>        
     </li>
     <li>
-    <%= link_to("Show Tasks", [current_todouser, :tasks]) %>        
+    <%= link_to("Show Folder-Created Tasks", [current_todouser, :folders]) %>     
     </li>
   <% else %>
     <li>
