@@ -7,7 +7,7 @@
     <th></th>
   </tr>
 
-<% @folders.each do |folder| %>
+<% @current_todouser.folders.each do |folder| %>
   <tr>
     <td><%= link_to 'Show', [@current_todouser,folder] %></td>
     <td><%= link_to 'Edit', edit_todouser_folder_path(@current_todouser,folder) %></td>

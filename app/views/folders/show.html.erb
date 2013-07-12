@@ -1,5 +1,21 @@
 <p id="notice"><%= notice %></p>
 
 
+<table>
+  <tr>
+    <th>Task</th>
+    <th>Description</th>
+    <th>Due Date</th>
+  </tr>
+
+<% @folder.tasks.each do |ft| %>
+  <tr>
+    <td><%= ft.description %></td>
+    <td><%= ft.duedate %></td>
+    <td>&nbsp;</td>
+  </tr>
+<% end %>
+</table>
+
 <%= link_to 'Edit', edit_todouser_folder_path(@current_todouser,@folder) %> |
 <%= link_to 'Back', todouser_folders_path %>
