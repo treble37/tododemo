@@ -15,9 +15,11 @@ Tododemo::Application.routes.draw do
       resources :tasks
     end
   end
-  
-  
-  
+
+  resources :folders do
+    resources :tasks
+  end
+
   root :to=>"pages#home"
   
   

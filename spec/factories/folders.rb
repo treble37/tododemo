@@ -2,7 +2,8 @@
 
 FactoryGirl.define do
   factory :folder do
-    name "MyString"
+    sequence(:name) {|n| "Folder#{n}"}
     todouser_id 1
+    association :todouser
   end
 end

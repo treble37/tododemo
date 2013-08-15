@@ -6,11 +6,11 @@ class TasksController < ApplicationController
   end
 
   def new
-  	@task = @taskable.tasks.new
+  	@task = @taskable.tasks.build
   end
 
   def create
-  	@task = @taskable.tasks.new(params[:task])
+  	@task = @taskable.tasks.build(params[:task])
   	if @task.save
   		redirect_to [@taskable, :tasks], notice: "Task created."
   	else
@@ -42,7 +42,9 @@ class TasksController < ApplicationController
 
 private
   def find_taskable
-  	klass = [Todouser, Folder].detect { |x| params["#{x.name.underscore}_id"]}
-  	@taskable = klass.find(params["#{klass.name.underscore}_id"])
+  	#klass = [Todouser,Folder].detect { |x| params["#{x.name.underscore}_id"]}
+  	klass_todouser = current_todouser
+    klass_todouser_folder = klass_todouser.folders.find_by_id(params["folder_id"])
+    @taskable = klass_todouser_folder || klass_todouser
   end
 end

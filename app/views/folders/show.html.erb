@@ -12,10 +12,12 @@
   <tr>
     <td><%= ft.description %></td>
     <td><%= ft.duedate %></td>
-    <td>&nbsp;</td>
+    <td><%= link_to "Edit Task", edit_todouser_folder_task_path(@current_todouser,@folder,ft) %></td>
+    <td><%= link_to 'Destroy', [@current_todouser,@folder,ft], method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
+<%= link_to "New Task", new_todouser_folder_task_path(@current_todouser,@folder) %> |
 <%= link_to 'Edit', edit_todouser_folder_path(@current_todouser,@folder) %> |
 <%= link_to 'Back', todouser_folders_path %>

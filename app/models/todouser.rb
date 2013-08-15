@@ -10,4 +10,7 @@ class Todouser < ActiveRecord::Base
   # attr_accessible :title, :body
   has_many :tasks, as: :taskable, dependent: :destroy
   has_many :folders, dependent: :destroy
+
+  validates :email, presence: true
+  validates :password, presence: true
 end
