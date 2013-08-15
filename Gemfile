@@ -40,6 +40,7 @@ group :test, :development do
   
   gem "debugger", "~> 1.6.0"
   gem "pry", "~> 0.9.12.2"
+  gem "sextant", "~> 0.2.4"
 end
 group :test do
   gem 'capybara', '~>1.1.2' #used in Rails 3.2.1 tutorial

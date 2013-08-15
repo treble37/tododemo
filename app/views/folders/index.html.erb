@@ -9,6 +9,7 @@
 
 <% @current_todouser.folders.each do |folder| %>
   <tr>
+    <td><%= folder.name %></td>
     <td><%= link_to 'Show', [@current_todouser,folder] %></td>
     <td><%= link_to 'Edit', edit_todouser_folder_path(@current_todouser,folder) %></td>
     <td><%= link_to 'Destroy', [@current_todouser,folder], method: :delete, data: { confirm: 'Are you sure?' } %></td>

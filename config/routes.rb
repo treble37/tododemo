@@ -9,14 +9,14 @@ Tododemo::Application.routes.draw do
 
   get "pages/about"
   
-  resources :todousers do
+  resources :todousers, only: [] do
     resources :tasks  
     resources :folders do
       resources :tasks
     end
   end
 
-  resources :folders do
+  resources :folders, only: [] do
     resources :tasks
   end
 
