@@ -42,7 +42,6 @@ class TasksController < ApplicationController
 
 private
   def find_taskable
-  	#klass = [Todouser,Folder].detect { |x| params["#{x.name.underscore}_id"]}
   	klass_todouser = current_todouser
     klass_todouser_folder = klass_todouser.folders.find_by_id(params["folder_id"])
     @taskable = klass_todouser_folder || klass_todouser

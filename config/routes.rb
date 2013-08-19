@@ -1,7 +1,4 @@
 Tododemo::Application.routes.draw do
-  #get "tasks/index"
-
-  #get "tasks/new"
 
   devise_for :todousers
 
