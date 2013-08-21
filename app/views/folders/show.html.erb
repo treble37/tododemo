@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<h1>Folder Tasks</h1>
 
 <table>
   <tr>
@@ -12,12 +12,14 @@
   <tr>
     <td><%= ft.description %></td>
     <td><%= ft.duedate %></td>
-    <td><%= link_to "Edit Task", edit_todouser_folder_task_path(@current_todouser,@folder,ft) %></td>
-    <td><%= link_to 'Destroy', [@current_todouser,@folder,ft], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to "Edit Task", edit_todouser_folder_task_path(@current_todouser,@folder,ft), class: "btn btn-default" %></td>
+    <td><%= link_to 'Delete Task', [@current_todouser,@folder,ft], method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
   </tr>
 <% end %>
 </table>
 
-<%= link_to "New Task", new_todouser_folder_task_path(@current_todouser,@folder) %> |
-<%= link_to 'Edit', edit_todouser_folder_path(@current_todouser,@folder) %> |
-<%= link_to 'Back', todouser_folders_path %>
+<div class="btn-group">
+<%= link_to "New Task", new_todouser_folder_task_path(@current_todouser,@folder), class: "btn btn-default" %> |
+<%= link_to 'Edit', edit_todouser_folder_path(@current_todouser,@folder), class: "btn btn-default" %> |
+<%= link_to 'Back', todouser_folders_path, class: "btn btn-default" %>
+</div>

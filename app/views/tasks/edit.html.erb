@@ -1,5 +1,5 @@
 <h1>Edit Task</h1>
-<%= form_for [@taskable, @task] do |f| %>
+<%= form_for [@taskable, @task], html: {class: "horizontal", role: "form"} do |f| %>
   <% if @task.errors.any? %>
     <div class="#{flash_class(:error)}">
       <h2>Please correct the following errors.</h2>
@@ -10,15 +10,19 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
-  	<%= f.label "Task Description" %>
-    <%= f.text_area :description %>
+  <div class="form-group">
+  	<%= f.label "Task Description", class: "col-lg-2 control-label" %>
+    <div class="col-md-10">
+      <%= f.text_area :description, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-  	<%= f.label "Due Date" %>
-    <%= f.text_field :duedate %>
+  <div class="form-group">
+    <%= f.label "Due Date", class: "col-lg-2 control-label" %>
+    <div class="col-md-10">
+      <%= f.text_area :duedate, class: "form-control" %>
+    </div>
   </div>
-  <div class="actions">
+  <div class="form-group">
     <%= f.submit %>
   </div>
 <% end %>
