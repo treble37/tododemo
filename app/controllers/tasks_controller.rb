@@ -12,7 +12,7 @@ class TasksController < ApplicationController
   def create
   	@task = @taskable.tasks.build(params[:task])
   	if @task.save
-  		redirect_to [@taskable, :tasks], notice: "Task created."
+      redirect_taskable(@taskable,"Task created.")
   	else
   		render :new
   	end
@@ -25,7 +25,7 @@ class TasksController < ApplicationController
   def update
     @task = @taskable.tasks.find(params[:id])
     if @task.update_attributes(params[:task])
-      redirect_to [@taskable, :tasks], notice: "Task updated."
+      redirect_taskable(@taskable,"Task updated.")
     else
       render :edit
     end
@@ -45,5 +45,12 @@ private
   	klass_todouser = current_todouser
     klass_todouser_folder = klass_todouser.folders.find_by_id(params["folder_id"])
     @taskable = klass_todouser_folder || klass_todouser
+  end
+  def redirect_taskable(taskable_obj,msg_str)
+    if taskable_obj.class==Todouser
+      redirect_to [@taskable, :tasks], notice: msg_str
+    else
+      redirect_to [current_todouser, taskable_obj, :tasks], notice: msg_str
+    end
   end
 end
