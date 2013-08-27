@@ -8,10 +8,9 @@ gem 'rails', '~>3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 ##for heroku deployment
-gem 'pg'
-
 group :production do
   gem 'unicorn'
+  gem 'pg'
 end
 
 # Gems used only for assets and not required
@@ -36,6 +35,7 @@ gem 'therubyracer' #needed for rspec install
 gem 'devise', '~> 2.1.2'
 
 group :test, :development do
+  gem 'sqlite3'
   gem 'annotate', '~> 2.4.1.beta' 
   gem 'faker','~>1.0.1'
   

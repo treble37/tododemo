@@ -46,7 +46,7 @@ class FoldersController < ApplicationController
 
     respond_to do |format|
       if @folder.save
-        format.html { redirect_to @folder, notice: 'Folder was successfully created.' }
+        format.html { redirect_to [@current_todouser,:folders], notice: 'Folder was successfully created.' }
         format.json { render json: @folder, status: :created, location: @folder }
       else
         format.html { render action: "new" }
@@ -78,7 +78,7 @@ class FoldersController < ApplicationController
     @folder.destroy
 
     respond_to do |format|
-      format.html { redirect_to todousers_folders_url }
+      format.html { redirect_to [@current_todouser,:folders], notice: 'Folder was successfully deleted.' }
       format.json { head :no_content }
     end
   end
