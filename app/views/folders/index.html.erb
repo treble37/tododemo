@@ -1,21 +1,21 @@
 <h1>Listing folders</h1>
 
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @current_todouser.folders.each do |folder| %>
-  <tr>
-    <td><%= folder.name %></td>
-    <td><%= link_to 'Folder Tasks', [@current_todouser,folder], class: "btn btn-default" %></td>
-    <td><%= link_to 'Edit Folder', edit_todouser_folder_path(@current_todouser,folder), class: "btn btn-default" %></td>
-    <td><%= link_to 'Delete Folder', [@current_todouser,folder], method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
-  </tr>
+ <div class="row">
+    <div class="span3">
+      <%= folder.name %>
+    </div>
+    <div class="span3">
+      <%= link_to 'Folder Tasks', [@current_todouser,folder], class: "btn btn-default" %>
+    </div>
+    <div class="span3">
+      <%= link_to 'Edit Folder', edit_todouser_folder_path(@current_todouser,folder), class: "btn btn-default" %>
+    </div>
+    <div class="span3">
+      <%= link_to 'Delete Folder', [@current_todouser,folder], method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+    </div>
+ </div>
 <% end %>
-</table>
 
 <br />
 <div class="btn-group">

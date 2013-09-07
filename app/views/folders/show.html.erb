@@ -1,22 +1,22 @@
 <p id="notice"><%= notice %></p>
 <h1>Folder Tasks</h1>
 
-<table>
-  <tr>
-    <th>Task</th>
-    <th>Description</th>
-    <th>Due Date</th>
-  </tr>
+<div class="row">
+  <div class="span3">Description</div>
+  <div class="span3">Due Date</div>
+  <div class="span3">Edit</div>
+  <div class="span3">Complete</div>
+</div>
 
 <% @folder.tasks.each do |ft| %>
-  <tr>
-    <td><%= ft.description %></td>
-    <td><%= ft.duedate %></td>
-    <td><%= link_to "Edit Task", edit_todouser_folder_task_path(@current_todouser,@folder,ft), class: "btn btn-default" %></td>
-    <td><%= link_to 'Delete Task', [@current_todouser,@folder,ft], method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
-  </tr>
+  <div class="row">
+    <div class="span3"><%= ft.description %></div>
+    <div class="span3"><%= ft.duedate %></div>
+    <div class="span3"><%= link_to "Edit Task", edit_todouser_folder_task_path(@current_todouser,@folder,ft), class: "btn btn-default" %></div>
+    <div class="span3"><%= link_to 'Delete Task', [@current_todouser,@folder,ft], method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></div>
+  </div>
+    
 <% end %>
-</table>
 
 <div class="btn-group">
 <%= link_to "New Task", new_todouser_folder_task_path(@current_todouser,@folder), class: "btn btn-default" %> |

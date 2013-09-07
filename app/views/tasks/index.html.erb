@@ -1,8 +1,10 @@
 <h1>User Tasks</h1>
   <% @tasks.each do |task| %>
   <div class="row">
-    <div class="col-md-10">
+    <div class="span6">
       <%= task.description+" "+task.duedate %>
+    </div>
+    <div class="span4">
       <div class="btn-group">
         <%= link_to "Edit Task", [:edit, current_todouser, task], class: "btn btn-default" %>
         <%= link_to "Delete Task", [current_todouser, task], :confirm=>"Are you sure?", :method=>:delete, class: "btn btn-danger" %>
