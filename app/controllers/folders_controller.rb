@@ -79,6 +79,7 @@ class FoldersController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to [@current_todouser,:folders], notice: 'Folder was successfully deleted.' }
+      format.js { render :nothing => true }
       format.json { head :no_content }
     end
   end
