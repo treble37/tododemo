@@ -33,10 +33,16 @@ class TasksController < ApplicationController
 
   def destroy
     @task = @taskable.tasks.find(params[:id])
-    if @task.destroy
-      redirect_to root_path, notice: "Task deleted."
-    else
-      redirect_to [@taskable, :tasks], notice: "Could not delete task for some reason."
+    respond_to do |format|
+      if @task.destroy
+        format.html { redirect_to current_todouser, notice: "Task deleted." }
+        format.js { render :nothing=>true }
+        format.json { render json: current_todouser, status: :success, location: current_todouser}
+      else
+        format.html { redirect_to [@taskable, :tasks], notice: "Could not delete task for some reason." }
+        format.js { format.js { render :nothing=>true } }
+        format.json { render json: @task.errors, status: :unprocessable_entity }
+      end
     end
   end
 
